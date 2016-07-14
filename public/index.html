@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>Contact List App</title>
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<div class="container" ng-controller="AppCtrl" style="margin-top:10%">
+
+	<div class="jumbotron">
+
+		<h1>Contact List App</h1><br><br>
+
+		<table class="table">
+			
+			<thead>
+			
+				<tr>
+					
+					<th>Name</th>
+					<th>Email</th>
+					<th>Phone</th>
+					<th>&nbsp;</th>
+
+				</tr>
+
+			</thead>
+
+			<tbody>
+				
+				<tr>
+					
+					<td><input class="form-control" ng-model="fContact.name" type="" name=""></td>
+
+					<td><input class="form-control" ng-model="fContact.email" type="" name=""></td>
+
+					<td> <input class="form-control" ng-model="fContact.phone" type="" name=""> </td>
+
+					<td ><button class="btn btn-info" ng-click="findContact()">Find Contact</button></td>
+
+				</tr>
+
+				<!-- ng-repeat="fContact in fContactList" -->
+
+				<tr>
+				
+					<td>{{fContactListName}}</td>
+					<td>{{fContactListEmail}}</td>
+					<td>{{fContactListNumber}}</td>
+
+				</tr>
+
+			</tbody>
+
+		</table>
+
+	</div>
+
+	<div class="jumbotron">
+
+		<!-- <input ng-model="test">
+		{{test}} -->
+
+		<table class="table">
+			
+			<thead>
+				
+				<tr>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Phone</th>
+					<th>Action</th>
+					<th>&nbsp;</th>
+					<th>&nbsp;</th>
+				</tr>
+
+			</thead>
+
+			<tbody>
+
+				<tr>
+					
+					<td><input class="form-control" ng-model="contact.name" type="" name=""></td>
+					<td><input class="form-control" ng-model="contact.email" type="" name=""></td>
+					<td><input class="form-control" ng-model="contact.number" type="" name=""></td>
+
+					<td><button class="btn btn-primary" ng-click="addContact()">Add Contact</button></td>
+					<td><button class="btn btn-warning" ng-click="update()">Update</button></td>
+					<td><button class="btn btn-info" ng-click="clear()">Clear</button></td>
+
+				</tr>
+				
+				<tr ng-repeat="contact in contactList">
+				
+					<td>{{contact.name}}</td>
+					<td>{{contact.email}}</td>
+					<td>{{contact.number}}</td>
+					<td><button class="btn btn-danger" ng-click="remove(contact._id)">Remove</button></td>
+					<td><button class="btn btn-primary" ng-click="edit(contact._id)" style="background-color: green;">Edit</button></td>
+
+				</tr>
+
+				<!-- <tr>
+					<td><div ng-init="firstName='John'">
+
+<p>The name is <span ng-bind="firstName"></span></p>
+
+</div></td>
+				</tr> -->
+
+			</tbody>
+
+		</table>
+
+	</div>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+<script src="Controllers/controller.js"></script>
+
+</body>
+</html>
